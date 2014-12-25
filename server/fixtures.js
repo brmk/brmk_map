@@ -1,0 +1,2 @@
+
+Venues.remove({});
