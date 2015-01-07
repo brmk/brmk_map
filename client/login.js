@@ -8,10 +8,15 @@
           console.log(err.reason);
           Session.set('errorMessage', err.reason || 'Unknown error');
         }
+               else{
+            Session.set('logged',true);
+            Session.set('queries', null);
+            Session.set('venues',null);
+            setHelperToMongo();
+            deleteMarkers();}
           }
                          );
-           Meteor.call('removeAllPosts')
-            deleteMarkers();
+         
         }
     });
 
@@ -22,10 +27,14 @@
                     //sow err message
                 } else {
                     //show alert that says logged out
-                  Session.set('queries', undefined)
+                  Session.set('logged',false);
+                  Session.set('queries', null);
+                  Session.set('venues',null);
+                  setHelperToSession();
+                  deleteMarkers();
                     //alert('logged out');
                 }
-              deleteMarkers();
+              
             });
         }
     });

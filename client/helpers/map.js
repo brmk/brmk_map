@@ -16,3 +16,4 @@ Template.map.rendered = function () {
   });
   marker.setMap(map);  */
 }
+

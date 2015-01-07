@@ -25,6 +25,7 @@ var venues;
 if (Session.get('queries') === undefined)
     var queries = [];
 else
+    if(Meteor.userId() === null)
     var queries = Session.get('queries');
 Template.input.events({
     'keypress input': function(event, template) {
