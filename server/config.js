@@ -1,7 +1,6 @@
 
 (function(){
     Meteor.startup(function () {
-        Venues.remove({});
         Accounts.loginServiceConfiguration.remove({
             service: "google"
         });

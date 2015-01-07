@@ -1,5 +1,5 @@
 Template.venuesList.helpers({
   venues: function() {
-    return Venues.find();
+    return Session.get('venues');
   }
 });
